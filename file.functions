@@ -97,5 +97,8 @@ _libertine_compile_file_internal()
 	else
 		mkdir -m 0755 -p "$outputFolderPath"/usr
 		ln -s .."$(libertine_public_outputBuildSysrootPath)"/usr/bin "$outputFolderPath"/usr/bin
+		ln -s .."$(libertine_public_outputBuildSysrootPath)"/usr/lib "$outputFolderPath"/usr/lib
+		ln -s .."$(libertine_public_outputBuildSysrootPath)"/usr/share "$outputFolderPath"/usr/share
+		ln -s .."$(libertine_public_outputBuildSysrootPath)"/usr/include "$outputFolderPath"/usr/include
 	fi
 }
