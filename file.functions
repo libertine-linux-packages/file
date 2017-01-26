@@ -52,6 +52,9 @@ case "$package" in
 
 		depends build_musl_cross_make_host
 		build_needs "$libertine_host"-cc "$libertine_host"-gcc "$libertine_host"-ar "$libertine_host"-ld "$libertine_host"-ranlib "$libertine_host"-strip
+		
+		depends build_paxctl
+		build_needs paxctl
 
 		depends zlib
 		
@@ -91,7 +94,7 @@ _libertine_compile_file_internal()
 	popd
 	
 	if $shouldStrip; then
-		libertine_public_installAndStripBinariesIn bin file
+		libertine_public_installAndStripBinaryIn bin file
 		mkdir -m 0755 -p "$(libertine_public_outputInitramfsPath)"/usr/share/misc
 		cp "$outputFolderPath"/usr/share/misc/magic.mgc "$(libertine_public_outputInitramfsPath)"/usr/share/misc
 	else
