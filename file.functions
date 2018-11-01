@@ -28,6 +28,7 @@ depends build_slibtool
 build_needs clibtool-static libtoolize realpath
 
 depends build_busybox
+depends build_netbsd_src_sleep
 build_needs sh env expr ls sleep install
 
 case "$package" in
